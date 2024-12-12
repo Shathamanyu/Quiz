@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./main.css">
+
+</head>
+<body>
+    <h2>Question <span id="questionNumber"></span></h2>
+    <form onsubmit="handleAnswer('Mona Lisa', 'Mona Lisa', 'q4.html'); updateQuestionNumber(); return false;">
+        <div class="ma">
+        <div>
+        <p><b>Mark the odd one out?</b></p>
+        <input type="radio" id="Mona Lisa" name="q3" value="Mona Lisa"> A. Mona Lisa<br>
+        <input type="radio" id="Monet" name="q3" value="Monet"> B. Monet<br>
+        <input type="radio" id="Picasso" name="q3" value="Picasso"> C. Picasso<br>
+        <input type="radio" id="Van Gogh" name="q3" value="Van Gogh"> D. Van Gogh<br><br>
+        </div>
+        <div class="le">
+            <button type="submit">Next</button>
+        </div>
+        </div>
+    </form>
+</body>
+</html>

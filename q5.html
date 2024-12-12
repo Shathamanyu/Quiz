@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./main.css">
+
+</head>
+<body>
+    <h2>Question <span id="questionNumber"></span></h2>
+    <form onsubmit="handleAnswer('ca3', 'II only', 'q6.html'); updateQuestionNumber(); return false;">
+        <div class="ma">
+            <div>
+                <p><b>Fact 1:	All dogs like to run.</b></p>
+                <p><b>Fact 2:	Some dogs like to swim.</b></p>
+                <p><b>Fact 3:	Some dogs look like their masters.</b></p>
+                <p><b>If the first three statements are facts, which of the following statements must also be a fact?</b></p>
+                <p><b>I:	All dogs who like to swim look like their masters.</b></p>
+                <p><b>II:	Dogs who like to swim also like to run.</b></p>
+                <p><b>III:	Dogs who like to run do not look like their masters.</b></p>
+
+
+
+
+                <input type="radio" id="optionB" name="q5" value="OptionB"> A. I only<br>
+                <input type="radio" id="ca3" name="q5" value="II only"> B. II only<br>
+                <input type="radio" id="optionC" name="q5" value="OptionC"> C. II and III only<br>
+                <input type="radio" id="optionD" name="q5" value="OptionD"> D. None of the statements is a known fact.<br><br>
+        
+            </div>
+            <div class="le">
+                <button type="submit">Next</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+

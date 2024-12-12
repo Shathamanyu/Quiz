@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 5</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./main.css">
+
+</head>
+<body>
+    <h2>Question <span id="questionNumber"></span></h2>
+    <form onsubmit="handleAnswer('ca2', 'beautiful', 'result.html'); updateQuestionNumber(); return false;">
+        <div class="ma">
+            <div>
+                <p><b>Which word does NOT belong with the others?</b></p>
+        <input type="radio" id="optionG" name="q5" value="OptionG"> A. unique<br>
+        <input type="radio" id="optionE" name="q5" value="OptionE"> B. rare<br>
+        <input type="radio" id="optionF" name="q5" value="OptionF"> C. exceptional<br>
+        <input type="radio" id="ca2" name="q5" value="beautiful"> D. beautiful<br><br>
+            </div>
+            <div class="lee">
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

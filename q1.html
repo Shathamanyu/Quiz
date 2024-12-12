@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./main.css">
+    
+</head>
+<body>
+    <h2>Question <span id="questionNumber"></span></h2>
+    <form onsubmit="handleAnswer('summer', 'Summer', 'q2.html'); updateQuestionNumber(); return false; ">
+       <div class="ma">
+        <div>
+        <p><b>Find the missing term "65, 195, 780, ?, 23400, 117000" ?</b></p>
+        <input type="radio" id="summer" name="q1" value="Summer"> A. 4500<br>
+        <input type="radio" id="winter" name="q1" value="Winter"> B. 6100<br>
+        <input type="radio" id="rainy" name="q1" value="Rainy"> C. 3900<br>
+        <input type="radio" id="autumn" name="q1" value="Autumn"> D. 7809<br><br>
+       </div>
+       <div class="le">
+        <button type="submit">Next</button>
+       </div>
+       </div>
+    </form>
+</body>
+</html>

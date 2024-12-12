@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./main.css">
+
+    
+</head>
+<body>
+    <h2>Question <span id="questionNumber"></span></h2>
+    <form onsubmit="handleAnswer('winte', 'Winte', 'q3.html'); updateQuestionNumber(); return false;">
+        <div class="ma">
+            <div >
+                <p><b>Look at this series: 2, 1, (1/2), (1/4), ... What number should come next?</b></p>
+                <input type="radio" id="rain" name="q2" value="Winter"> A. 1/3<br>
+                <input type="radio" id="winte" name="q2" value="Winte"> B. 1/8<br>
+                <input type="radio" id="rainy" name="q2" value="Rainy"> C. 2/8<br>
+                <input type="radio" id="autumn" name="q2" value="Autumn"> D. 1/12<br><br>
+            </div>
+            <div class="le">
+                    <button   type="submit">Next</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
