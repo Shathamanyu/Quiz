@@ -548,44 +548,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -759,19 +721,13 @@
             <img src="./10000_coders_logo.jpg" alt="Logo">
         </div>
         <div class="webcam-section">
-            <video  width="150" height="100" id="video" autoplay></video>
+            <video onclick="snapshot(this);" width="150" height="100" id="video" autoplay></video>
         </div>
     </div>
 
     <div class="main-content">
         <div class="ad-section">
             <marquee class="mq1" behavior="" direction="up" loop="">
-                <img src="./pic14.jpg" alt="Ad 1">
-                <img src="./pic12.jpg" alt="Ad 1">
-            <img src="./pic13.jpg" alt="Ad 1">
-            <img src="./pic15.jpg" alt="Ad 1">
-            <img src="./pic16.jpg" alt="Ad 1">
-            <img src="./pic17.jpg" alt="Ad 1">
                 <img src="./pic1.png" alt="Ad 1">
             <img src="./pic2.png" alt="Ad 1">
             <img src="./pic3.png" alt="Ad 1">
@@ -791,8 +747,6 @@
 
         <div class="ad-section">
             <marquee class="mq1" behavior="" direction="down" loop="">
-                <img src="./pic14.jpg" alt="Ad 1">
-
                 <img src="./pic6.png" alt="Ad 1">
             <img src="./pic7.png" alt="Ad 1">
             <img src="./pic8.png" alt="Ad 1">
@@ -804,12 +758,7 @@
             <img src="./pic3.png" alt="Ad 1">
             <img src="./pic4.png" alt="Ad 1">
             <img src="./pic5.png" alt="Ad 1">
-                <img src="./pic12.jpg" alt="Ad 1">
-            <img src="./pic13.jpg" alt="Ad 1">
-            <img src="./pic15.jpg" alt="Ad 1">
-            <img src="./pic16.jpg" alt="Ad 1">
-            <img src="./pic17.jpg" alt="Ad 1">
-
+            
             </marquee>
             
         </div>
@@ -818,197 +767,7 @@
     <div class="footer">
         &copy; 2024 Exam Portal. All Rights Reserved.
     </div>
-    <script>
-        let switchCount = 0;
-        const maxSwitchCount = 4;
-        // Monitor visibility change for user panel
-        document.addEventListener("visibilitychange", () => {
-            if (document.visibilityState === "hidden") {
-                switchCount++;
-                if (switchCount < maxSwitchCount) {
-                    warningElement.textContent = `Warning: Tab switch count is ${switchCount}.`;
-                } else {
-                    localStorage.setItem("isBlocked", true);
-                    alert("You have been blocked from accessing this page.");
-                    window.location.href = "about:blank";
-                }
-            }
-        });
-
-        // Notify user upon returning to the tab
-        document.addEventListener("visibilitychange", () => {
-            if (document.visibilityState === "visible" && switchCount > 0 && switchCount < maxSwitchCount) {
-                alert(`You have switched tabs ${switchCount} time(s). Do not switch tabs!`);
-            }
-        });
-    </script>
-</body> 
+</body>
 </html>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Portal</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(120deg, #89f7fe, #66a6ff);
-            color: #333;
-            height: 100vh;
-            overflow: hidden;
-            text-align: center;
-        }
-        .hidden {
-            display: none;
-        }
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 15px 30px;
-            color: #fff;
-        }
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 80px);
-            padding: 20px;
-        }
-        .warning {
-            color: red;
-            font-weight: bold;
-        }
-        button {
-            background-color: #ff6f61;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #e55a4e;
-        }
-    </style>
-</head>
-<body>
-    <div id="login-panel">
-        <h1>Login</h1>
-        <form id="login-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" required><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" required><br>
-            <button type="submit">Login</button>
-        </form>
-        <p id="login-error" style="color: red;"></p>
-    </div>
-
-    <div id="user-panel" class="hidden">
-        <div class="header">
-            <h1>Welcome User</h1>
-        </div>
-        <div class="content">
-            <p>Please stay on this tab. Switching tabs repeatedly will block you.</p>
-            <p class="warning" id="warning"></p>
-        </div>
-    </div>
-
-    <div id="admin-panel" class="hidden">
-        <div class="header">
-            <h1>Admin Panel</h1>
-        </div>
-        <div class="content">
-            <button id="unblock-user">Unblock User</button>
-            <p id="admin-message"></p>
-        </div>
-    </div>
-
-    <script>
-        let switchCount = 0;
-        const maxSwitchCount = 7;
-        const warningElement = document.getElementById("warning");
-        const userPanel = document.getElementById("user-panel");
-        const adminPanel = document.getElementById("admin-panel");
-        const loginPanel = document.getElementById("login-panel");
-        const unblockButton = document.getElementById("unblock-user");
-        const adminMessage = document.getElementById("admin-message");
-
-        // Function to check if the user is blocked
-       
-
-        // Monitor visibility change for user panel
-        document.addEventListener("visibilitychange", () => {
-            if (document.visibilityState === "hidden") {
-                switchCount++;
-                if (switchCount < maxSwitchCount) {
-                    warningElement.textContent = `Warning: Tab switch count is ${switchCount}.`;
-                } else {
-                    localStorage.setItem("isBlocked", true);
-                    alert("You have been blocked from accessing this page.");
-                    window.location.href = "about:blank";
-                }
-            }
-        });
-
-        // Notify user upon returning to the tab
-        document.addEventListener("visibilitychange", () => {
-            if (document.visibilityState === "visible" && switchCount > 0 && switchCount < maxSwitchCount) {
-                alert(`You have switched tabs ${switchCount} time(s). Do not switch tabs!`);
-            }
-        });
-
-        // Login functionality
-        const loginForm = document.getElementById("login-form");
-        loginForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-
-            if (username === "admin" && password === "admin123") {
-                loginPanel.classList.add("hidden");
-                adminPanel.classList.remove("hidden");
-            } else if (username === "user" && password === "user123") {
-                loginPanel.classList.add("hidden");
-                userPanel.classList.remove("hidden");
-            } else {
-                document.getElementById("login-error").textContent = "Invalid credentials.";
-            }
-        });
-
-        // Unblock user functionality for admin
-        unblockButton.addEventListener("click", () => {
-            localStorage.removeItem("isBlocked");
-            adminMessage.textContent = "User has been successfully unblocked.";
-        });
-    </script>
-</body>
-</html> -->
